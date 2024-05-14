@@ -20,3 +20,14 @@ Tue 14 May 2024 07:10:01 AM UTC:
  tests:  0|5
 total_score: 0/70
 c1014b2
+Tue 14 May 2024 07:11:06 AM UTC: 
+ sudoku.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:67:17: error: ‘aux’ may be used uninitialized in this function [-Werror=maybe-uninitialized]
+   67 |                 pushBack(list,aux);
+      |                 ^~~~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+b9ee5d7
