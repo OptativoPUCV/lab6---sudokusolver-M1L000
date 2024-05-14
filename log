@@ -31,3 +31,9 @@ sudoku.c:67:17: error: ‘aux’ may be used uninitialized in this function [-We
 cc1: all warnings being treated as errors
 Compilation failed
 b9ee5d7
+Tue 14 May 2024 07:11:37 AM UTC: 
+ sudoku.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+ tests:  0|5
+total_score: 0/70
+58a2ddd
