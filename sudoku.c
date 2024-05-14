@@ -57,14 +57,14 @@ List* get_adj_nodes(Node* n){
     int i;  
     for(i=0;i<9;i++)
        {
-          if(n->sudo[0][i]==0)
-          {
-             n->sudo[0][i]= o;
-             o++;
+          for(int k = 0; k < 9; k++){
+            if(n->sudo[i][k]==0)
+             {
+                n->sudo[i][k]= o;
+                o++;
+             }
+             pushBack(list,n);
           }
-          pushBack(list,n);
-
-             
        }
     return list;
 }
