@@ -80,7 +80,7 @@ int is_valid(Node* n){
         for (int colInicio = 0; colInicio < 9; colInicio += 3) {
             for (int i = 0; i < 3; i++) {
                 for (int j = 0; j < 3; j++) {
-                    int num = n[filaInicio + i][colInicio + j];
+                    int num = n->sudo[filaInicio + i][colInicio + j];
                     if (num != 0) { 
                         if (arr[num] == 1) {
                             return 0;
