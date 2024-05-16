@@ -519,3 +519,36 @@ test.c:7:8: error: ‘_strdup’ defined but not used [-Werror=unused-function]
 cc1: all warnings being treated as errors
 Compilation failed
 22f4610
+Thu 16 May 2024 04:39:37 AM UTC: 
+ sudoku.c | 2 --
+ 1 file changed, 2 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:161:5: error: ‘main’ is normally a non-static function [-Werror=main]
+  161 | int main( int argc, char *argv[] ){
+      |     ^~~~
+test.c:245:5: error: ‘main’ is normally a non-static function [-Werror=main]
+  245 | int main( int argc, char *argv[] ) {
+      |     ^~~~
+test.c:245:5: error: redefinition of ‘main’
+In file included from test.c:5:
+sudoku.c:161:5: note: previous definition of ‘main’ with type ‘int(int,  char **)’
+  161 | int main( int argc, char *argv[] ){
+      |     ^~~~
+test.c:262:1: error: expected declaration or statement at end of input
+  262 | }
+      | ^
+At top level:
+test.c:245:5: error: ‘main’ defined but not used [-Werror=unused-function]
+  245 | int main( int argc, char *argv[] ) {
+      |     ^~~~
+test.c:7:8: error: ‘_strdup’ defined but not used [-Werror=unused-function]
+    7 | char * _strdup(const char * str) {
+      |        ^~~~~~~
+In file included from test.c:5:
+sudoku.c:161:5: error: ‘main’ defined but not used [-Werror=unused-function]
+  161 | int main( int argc, char *argv[] ){
+      |     ^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+c8e838c
