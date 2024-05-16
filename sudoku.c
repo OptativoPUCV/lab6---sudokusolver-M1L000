@@ -136,10 +136,23 @@ int is_final(Node* n){
    return 1;
 }
 
+
+int sizeP(Stack *pila)
+{
+   int cont = 0;
+   Node* aux = top(pila);
+   while(aux != NULL)
+      {
+         cont++;
+         pop(pila);
+         aux = top(pila);
+      }
+}
+
 Node* DFS(Node* initial, int* cont){
    Stack* s = createStack();
    push(s, initial);
-   while(size(s) != 0)
+   while(sizeP(s) != 0)
       {
          Node* n = top(s);
          pop(s);
