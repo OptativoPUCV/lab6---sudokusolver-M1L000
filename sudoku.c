@@ -140,12 +140,13 @@ int is_final(Node* n){
 int sizeP(Stack *pila)
 {
    int cont = 0;
-   Node* aux = top(pila);
+   Stack* ola = pila;
+   Node* aux = top(ola);
    while(aux != NULL)
       {
          cont++;
-         pop(aux);
-         aux = top(aux);
+         pop(ola);
+         aux = top(ola);
       }
    return cont;
 }
