@@ -144,13 +144,13 @@ Node* DFS(Node* initial, int* cont) {
 
     while (get_size(s) != 0) {
         Node* n = top(s);
-        pop(s);
+        
 
         if (is_final(n) == 1) {
             free(s); // Liberar la memoria de la pila.
             return n;
         }
-
+         pop(s);
         List* adj = get_adj_nodes(n);
         Node* aux = first(adj);
         while (aux) {
