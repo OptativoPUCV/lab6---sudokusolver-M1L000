@@ -43,7 +43,37 @@ void print_node(Node* n){
     printf("\n");
 }
 
+void hacerCeroArr(int* arr)
+{
+   for(int i = 0; i < 10; i++)
+      {
+         arr[i] = 0;
+      }
+}
+
+
 int is_valid(Node* n){
+   int arr[10];
+   hacerCeroArr(arr);
+   for(int i = 0; i < 9; i++)
+      {
+         for(int j = 0; j < 9; j++)
+            {
+               if(n->sudo[i][j] != 0)
+               {
+                  if(arr[n->sudo[i][j]] == 0)
+                  {
+                     arr[n->sudo[i][j]] = 1;
+                  }
+                  else
+                  {
+                     return 0;
+                  }
+               }
+               
+            }
+         hacerCeroArr(arr);
+      }
    
    
 
