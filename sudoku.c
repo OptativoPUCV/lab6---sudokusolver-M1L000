@@ -74,6 +74,23 @@ int is_valid(Node* n){
             }
          hacerCeroArr(arr);
       }   
+
+   int k=4,p; 
+   for(p=0;p<9;p++){
+       int i=3*(k/3) + (p/3) ;
+       int j=3*(k%3) + (p%3) ;
+      if(n->sudo[i][j] != 0)
+      {
+         if(arr[n->sudo[i][j]] == 0)
+         {
+            arr[n->sudo[i][j]] = 1;
+         }
+         else
+         {
+            return 0;
+         }
+      }
+   }
    
     return 1;
 }
@@ -120,6 +137,7 @@ int is_final(Node* n){
 }
 
 Node* DFS(Node* initial, int* cont){
+   
    
   return NULL;
 }
