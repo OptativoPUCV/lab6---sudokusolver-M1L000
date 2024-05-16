@@ -78,11 +78,9 @@ int is_valid(Node* n){
 
    for (int filaInicio = 0; filaInicio < 9; filaInicio += 3) {
         for (int colInicio = 0; colInicio < 9; colInicio += 3) {
-            bool arr[9 + 1] = 0; 
-
             for (int i = 0; i < 3; i++) {
                 for (int j = 0; j < 3; j++) {
-                    int num = sudoku[filaInicio + i][colInicio + j];
+                    int num = n[filaInicio + i][colInicio + j];
                     if (num != 0) { 
                         if (arr[num] == 1) {
                             return 0;

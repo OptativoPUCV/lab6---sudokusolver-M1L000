@@ -285,3 +285,13 @@ sudoku.c:85:31: error: ‘sudoku’ undeclared (first use in this function)
 sudoku.c:85:31: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 2e27644
+Thu 16 May 2024 03:48:14 AM UTC: 
+ sudoku.c | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:83:48: error: subscripted value is neither array nor pointer nor vector
+   83 |                     int num = n[filaInicio + i][colInicio + j];
+      |                                                ^
+Compilation failed
+7b14481
