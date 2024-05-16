@@ -147,6 +147,7 @@ int sizeP(Stack *pila)
          pop(pila);
          aux = top(pila);
       }
+   return cont;
 }
 
 Node* DFS(Node* initial, int* cont){
