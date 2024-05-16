@@ -174,3 +174,15 @@ Thu 16 May 2024 01:25:33 AM UTC:
  tests:  0|5
 total_score: 0/70
 3395355
+Thu 16 May 2024 01:27:28 AM UTC: 
+ sudoku.c | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:66:44: error: ‘adj’ undeclared (first use in this function); did you mean ‘adj2’?
+   66 |                          Node* adj2 = copy(adj);
+      |                                            ^~~
+      |                                            adj2
+sudoku.c:66:44: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+bfe6f50
