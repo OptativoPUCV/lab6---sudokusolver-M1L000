@@ -78,3 +78,27 @@ Thu 16 May 2024 01:11:57 AM UTC:
  tests:  0|5
 total_score: 0/70
 69006c2
+Thu 16 May 2024 01:12:39 AM UTC: 
+ sudoku.c | 1 +
+ 1 file changed, 1 insertion(+)
+In file included from test.c:5:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:67:41: error: passing argument 2 of ‘pushBack’ makes pointer from integer without a cast [-Werror=int-conversion]
+   67 |                 pushBack(list,n->sudo[i][j])
+      |                               ~~~~~~~~~~^~~
+      |                                         |
+      |                                         int
+In file included from test.c:4:
+list.h:23:33: note: expected ‘void *’ but argument is of type ‘int’
+   23 | void pushBack(List* list, void* data);
+      |                           ~~~~~~^~~~
+In file included from test.c:5:
+sudoku.c:67:45: error: expected ‘;’ before ‘}’ token
+   67 |                 pushBack(list,n->sudo[i][j])
+      |                                             ^
+      |                                             ;
+   68 |              }
+      |              ~                               
+cc1: all warnings being treated as errors
+Compilation failed
+e2268ab
