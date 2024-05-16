@@ -75,9 +75,10 @@ int is_valid(Node* n){
             }
          hacerCeroArr(arr);
       }  
-
+   hacerCeroArr(arr);
    for (int filaInicio = 0; filaInicio < 9; filaInicio += 3) {
         for (int colInicio = 0; colInicio < 9; colInicio += 3) {
+           hacerCeroArr(arr);
             for (int i = 0; i < 3; i++) {
                 for (int j = 0; j < 3; j++) {
                     int num = n->sudo[filaInicio + i][colInicio + j];
