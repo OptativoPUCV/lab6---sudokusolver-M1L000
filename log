@@ -264,3 +264,24 @@ Thu 16 May 2024 03:39:26 AM UTC:
  tests:  6|2
 total_score: 45/70
 2f26a2c
+Thu 16 May 2024 03:45:34 AM UTC: 
+ sudoku.c | 24 +++++++++++++++++-------
+ 1 file changed, 17 insertions(+), 7 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:81:13: error: unknown type name ‘bool’
+   81 |             bool arr[9 + 1] = 0;
+      |             ^~~~
+sudoku.c:4:1: note: ‘bool’ is defined in header ‘<stdbool.h>’; did you forget to ‘#include <stdbool.h>’?
+    3 | #include "list.h"
+  +++ |+#include <stdbool.h>
+    4 | 
+sudoku.c:81:31: error: invalid initializer
+   81 |             bool arr[9 + 1] = 0;
+      |                               ^
+sudoku.c:85:31: error: ‘sudoku’ undeclared (first use in this function)
+   85 |                     int num = sudoku[filaInicio + i][colInicio + j];
+      |                               ^~~~~~
+sudoku.c:85:31: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+2e27644

@@ -75,16 +75,26 @@ int is_valid(Node* n){
             }
          hacerCeroArr(arr);
       }  
-   int k=4,p; 
-   for(p=0;p<9;p++){
-       int i=3*(k/3) + (p/3) ;
-       int j=3*(k%3) + (p%3) ;
-       printf("%d ",n->sudo[i][j]);
-       if(p%3 == 2) printf("\n");
-   }
 
-   
-   
+   for (int filaInicio = 0; filaInicio < 9; filaInicio += 3) {
+        for (int colInicio = 0; colInicio < 9; colInicio += 3) {
+            bool arr[9 + 1] = 0; 
+
+            for (int i = 0; i < 3; i++) {
+                for (int j = 0; j < 3; j++) {
+                    int num = sudoku[filaInicio + i][colInicio + j];
+                    if (num != 0) { 
+                        if (arr[num] == 1) {
+                            return 0;
+                        }
+                        arr[num] = 1; 
+                    }
+                }
+            }
+        }
+    }
+
+
    
     return 1;
 }
