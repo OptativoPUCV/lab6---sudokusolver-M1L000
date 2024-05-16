@@ -597,3 +597,30 @@ Thu 16 May 2024 04:45:54 AM UTC:
  1 file changed, 1 insertion(+)
  tests:  0|0
 41dc88a
+Thu 16 May 2024 04:46:48 AM UTC: 
+ sudoku.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘sizeP’:
+sudoku.c:147:14: error: passing argument 1 of ‘pop’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+  147 |          pop(aux);
+      |              ^~~
+      |              |
+      |              Node *
+In file included from test.c:4:
+list.h:31:17: note: expected ‘Stack *’ {aka ‘List *’} but argument is of type ‘Node *’
+   31 | void pop(Stack* s);
+      |          ~~~~~~~^
+In file included from test.c:5:
+sudoku.c:148:20: error: passing argument 1 of ‘top’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+  148 |          aux = top(aux);
+      |                    ^~~
+      |                    |
+      |                    Node *
+In file included from test.c:4:
+list.h:32:18: note: expected ‘Stack *’ {aka ‘List *’} but argument is of type ‘Node *’
+   32 | void* top(Stack* s);
+      |           ~~~~~~~^
+cc1: all warnings being treated as errors
+Compilation failed
+a47a206

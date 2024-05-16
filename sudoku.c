@@ -144,8 +144,8 @@ int sizeP(Stack *pila)
    while(aux != NULL)
       {
          cont++;
-         pop(pila);
-         aux = top(pila);
+         pop(aux);
+         aux = top(aux);
       }
    return cont;
 }
