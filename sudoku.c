@@ -65,7 +65,8 @@ List* get_adj_nodes(Node* n){
                 }
                 else
                 {
-                   pushBack(list,n);
+                   Node* adj = copy(n);
+                    pushBack(list, adj);
                 }
              }
        }
