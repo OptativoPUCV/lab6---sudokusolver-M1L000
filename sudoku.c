@@ -139,7 +139,7 @@ int is_final(Node* n){
 Node* DFS(Node* initial, int* cont){
    Stack* s = createStack();
    push(s, initial);
-   while(top(s) != NULL)
+   while(get_size(s) != 0)
       {
          Node* n = top(s);
          pop(s);
