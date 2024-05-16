@@ -110,13 +110,12 @@ List* get_adj_nodes(Node* n){
                          k++;
                          Node* adj2 = copy(n);
                          adj2->sudo[i][j] = k;
-                         pushBack(list, adj2);
+                         if(is_valid(adj2) == 1) pushBack(list, adj2);
                       }
                    return list;
                 }
              }
        }
-    
     return list;
    
     
