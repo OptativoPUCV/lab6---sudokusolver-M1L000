@@ -146,8 +146,7 @@ Node* DFS(Node* initial, int* cont) {
         Node* n = top(s);
         pop(s);
 
-        if (is_final(n) == 1) {
-            free(s); // Liberar la memoria de la pila.
+        if (is_final(n)) {
             return n;
         }
 
@@ -162,7 +161,6 @@ Node* DFS(Node* initial, int* cont) {
         (*cont)++;
     }
 
-    free(s); // Liberar la memoria de la pila.
     return NULL;
 }
 /*
