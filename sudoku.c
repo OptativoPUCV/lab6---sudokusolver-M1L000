@@ -53,51 +53,39 @@ void hacerCeroArr(int* arr)
 
 
 int is_valid(Node* n){
-   int arr[10];
-   hacerCeroArr(arr);
-   for(int i = 0; i < 9; i++)
-      {
-         for(int j = 0; j < 9; j++)
-            {
-               if(n->sudo[i][j] == 0) continue;
-               if(n->sudo[i][j] != 0)
-               {
-                  if(arr[n->sudo[i][j]] == 0)
-                  {
-                     arr[n->sudo[i][j]] = 1;
-                  }
-                  else
-                  {
-                     return 0;
-                  }
-                  
+   for(int i = 0; i < 9; i++){
+      for(int j = 0; j < 9; j++){
+         if(n->sudo[i][j] == 0){
+            continue;
+         }
+         for(int k = 0; k < 9; k++){
+            if(n->sudo[i][k] == n->sudo[i][j] && k != j){
+               return 0;
+            }
+         }
+         for(int l = 0; l < 9; l++){
+            if(n->sudo[l][j] == n->sudo[i][j] && l != i){
+               return 0;
+            }
+
+         }
+         for(int k = 0; k < 3; k++){
+            for(int l = 0; l < 3; l++){
+               if(n->sudo[i/3*3 + k][j/3*3 + l] == n->sudo[i][j] && (i/3*3 + k != i || j/3*3 + l != j)){
+                  return 0;
                }
-               
-               
-            }
-         hacerCeroArr(arr);
-      }  
-   for (int filaInicio = 0; filaInicio < 9; filaInicio += 3) {
-        for (int colInicio = 0; colInicio < 9; colInicio += 3) {
-           hacerCeroArr(arr);
-            for (int i = 0; i < 3; i++) {
-                for (int j = 0; j < 3; j++) {
-                    int num = n->sudo[filaInicio + i][colInicio + j];
-                    if (num != 0) { 
-                        if (arr[num] == 1) {
-                            return 0;
-                        }
-                        arr[num] = 1; 
-                    }
-                }
-            }
-        }
-    }
 
+            }
 
-   
-    return 1;
+         }
+
+      }
+
+   }
+
+   return 1;
 }
+
 
 
 List* get_adj_nodes(Node* n){
