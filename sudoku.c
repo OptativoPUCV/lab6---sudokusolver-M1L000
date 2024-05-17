@@ -59,6 +59,7 @@ int is_valid(Node* n){
       {
          for(int j = 0; j < 9; j++)
             {
+               if(n->sudo[i][j] == 0) continue;
                if(n->sudo[i][j] != 0)
                {
                   if(arr[n->sudo[i][j]] == 0)
@@ -70,7 +71,8 @@ int is_valid(Node* n){
                      return 0;
                   }
                   
-               }   
+               }
+               
                
             }
          hacerCeroArr(arr);
