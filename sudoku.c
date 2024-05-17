@@ -142,7 +142,7 @@ Node* DFS(Node* initial, int* cont) {
     Stack* s = createStack();
     push(s, initial);
 
-    while (get_size(s) != 0) {
+    while (!get_size(s)) {
         Node* n = top(s);
         pop(s);
 
