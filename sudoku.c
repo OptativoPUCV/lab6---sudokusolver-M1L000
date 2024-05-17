@@ -96,13 +96,13 @@ List* get_adj_nodes(Node* n){
              {
                 if(n->sudo[i][j] == 0)
                 {
-                   int k = 0;
+                   int k = 1;
                    while(k < 10)
-                      { 
-                         k++;
+                      {
                          Node* adj2 = copy(n);
                          adj2->sudo[i][j] = k;
                          if(is_valid(adj2) == 1) pushBack(list, adj2);
+                         k++;
                       }
                    return list;
                 }
